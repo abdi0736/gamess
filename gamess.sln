@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gamess", "gamess\gamess.csproj", "{6A596224-D068-431C-B365-3F58D1D260F2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gamess", "Gamess\Gamess.csproj", "{0BB5EDB9-C31D-4F5A-A5FA-2D4ACA6C2902}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -8,9 +8,9 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{6A596224-D068-431C-B365-3F58D1D260F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6A596224-D068-431C-B365-3F58D1D260F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6A596224-D068-431C-B365-3F58D1D260F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6A596224-D068-431C-B365-3F58D1D260F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BB5EDB9-C31D-4F5A-A5FA-2D4ACA6C2902}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BB5EDB9-C31D-4F5A-A5FA-2D4ACA6C2902}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BB5EDB9-C31D-4F5A-A5FA-2D4ACA6C2902}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BB5EDB9-C31D-4F5A-A5FA-2D4ACA6C2902}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
