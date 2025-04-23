@@ -1,0 +1,18 @@
+Info: World Size: 10 x 10
+Info: 
+Abdi has equipped the following attack items:
+Info: - Sword (Damage: 10, Range: 1)
+Info: - Fireball (Damage: 20, Range: 3)
+Info: 
+== Battle begins! ==
+Abdi HP: 100 | Orc HP: 50
+[OBSERVE] Orc was hit for 30 damage. Remaining HP: 20
+Info: 
+== After the attack ==
+Orc HP: 20
+Info: 
+Hero now using a composite weapon: Magic sword
+Info: Total damage: 30
+Info: 
+== Final Battle ==
+Abdi HP: 100 | Orc HP: 20

@@ -1,5 +1,9 @@
-using Gamess;
-public interface IAttackStrategy
+using Gamess.Creatures;
+
+namespace Gamess.Strategies
 {
-    int CalculateAttack(List<AttackItem> items);
+    public interface IAttackStrategy
+    {
+        int CalculateDamage(Creature creature);
+    }
 }

@@ -1,0 +1,14 @@
+/Users/abdisirat/Desktop/gamessnew/Gamess/bin/Debug/net8.0/Gamess.deps.json
+/Users/abdisirat/Desktop/gamessnew/Gamess/bin/Debug/net8.0/Gamess.dll
+/Users/abdisirat/Desktop/gamessnew/Gamess/bin/Debug/net8.0/Gamess.pdb
+/Users/abdisirat/Desktop/gamessnew/Gamess/obj/Debug/net8.0/Gamess.csproj.AssemblyReference.cache
+/Users/abdisirat/Desktop/gamessnew/Gamess/obj/Debug/net8.0/Gamess.GeneratedMSBuildEditorConfig.editorconfig
+/Users/abdisirat/Desktop/gamessnew/Gamess/obj/Debug/net8.0/Gamess.AssemblyInfoInputs.cache
+/Users/abdisirat/Desktop/gamessnew/Gamess/obj/Debug/net8.0/Gamess.AssemblyInfo.cs
+/Users/abdisirat/Desktop/gamessnew/Gamess/obj/Debug/net8.0/Gamess.csproj.CoreCompileInputs.cache
+/Users/abdisirat/Desktop/gamessnew/Gamess/obj/Debug/net8.0/Gamess.sourcelink.json
+/Users/abdisirat/Desktop/gamessnew/Gamess/obj/Debug/net8.0/Gamess.dll
+/Users/abdisirat/Desktop/gamessnew/Gamess/obj/Debug/net8.0/refint/Gamess.dll
+/Users/abdisirat/Desktop/gamessnew/Gamess/obj/Debug/net8.0/Gamess.pdb
+/Users/abdisirat/Desktop/gamessnew/Gamess/obj/Debug/net8.0/ref/Gamess.dll
+/Users/abdisirat/Desktop/gamessnew/Gamess/bin/Debug/net8.0/config.xml

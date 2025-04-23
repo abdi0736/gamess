@@ -1,36 +1,30 @@
-using System;
 using System.Xml;
 
-public class GameConfig
+namespace Gamess
 {
-    public int WorldWidth { get; private set; }
-    public int WorldHeight { get; private set; }
-    public string GameLevel { get; private set; }
-    public string LoggingLevel { get; private set; } = "Verbose";
-    public string LoggingOutput { get; private set; } = "Console";
-
-    public void Load(string path)
+    public class GameConfig
     {
-        XmlDocument doc = new XmlDocument();
-        doc.Load(path);
+        public int MaxX { get; private set; }
+        public int MaxY { get; private set; }
+        public string GameLevel { get; private set; }
+        public string LoggingLevel { get; private set; } = "Verbose";
+        public string LoggingOutput { get; private set; } = "Console";
 
-        // Hent World MaxX og MaxY
-        var worldNode = doc.DocumentElement.SelectSingleNode("World");
-        if (worldNode != null)
+        public void Load(string path)
         {
-            WorldWidth = Convert.ToInt32(worldNode.SelectSingleNode("MaxX")?.InnerText);
-            WorldHeight = Convert.ToInt32(worldNode.SelectSingleNode("MaxY")?.InnerText);
-        }
+            XmlDocument doc = new XmlDocument();
+            doc.Load(path);
+    
+            MaxX = Convert.ToInt32(doc.DocumentElement.SelectSingleNode("World/MaxX")?.InnerText);
+            MaxY = Convert.ToInt32(doc.DocumentElement.SelectSingleNode("World/MaxY")?.InnerText);
+            GameLevel = doc.DocumentElement.SelectSingleNode("GameLevel")?.InnerText.Trim();
 
-        // Hent GameLevel
-        GameLevel = doc.DocumentElement.SelectSingleNode("GameLevel")?.InnerText.Trim();
-
-        // Hent Logging info
-        var loggingNode = doc.DocumentElement.SelectSingleNode("Logging");
-        if (loggingNode != null)
-        {
-            LoggingLevel = loggingNode.SelectSingleNode("Level")?.InnerText.Trim() ?? "Verbose";
-            LoggingOutput = loggingNode.SelectSingleNode("Output")?.InnerText.Trim() ?? "Console";
+            var loggingNode = doc.DocumentElement.SelectSingleNode("Logging");
+            if (loggingNode != null)
+            {
+                LoggingLevel = loggingNode.SelectSingleNode("Level")?.InnerText.Trim() ?? "Verbose";
+                LoggingOutput = loggingNode.SelectSingleNode("Output")?.InnerText.Trim() ?? "Console";
+            }
         }
     }
 }

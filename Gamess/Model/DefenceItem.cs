@@ -1,12 +1,14 @@
-namespace Gamess;
-
-public class DefenceItem : WorldObject
+namespace Gamess.Items
 {
-    public int ReduceHitPoint { get; set; }
-
-    public DefenceItem(string name, int reduceHitPoint)
-        : base(name, true, false) // Lootable by default
+    public class DefenceItem
     {
-        ReduceHitPoint = reduceHitPoint;
+        public int ReduceHitPoint { get; set; }
+        public string Name { get; set; }
+
+        public DefenceItem(string name, int reduceHitPoint)
+        {
+            Name = name;
+            ReduceHitPoint = reduceHitPoint;
+        }
     }
 }

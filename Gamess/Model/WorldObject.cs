@@ -1,5 +1,5 @@
+// WorldObject.cs
 namespace Gamess
-
 {
     public abstract class WorldObject
     {
