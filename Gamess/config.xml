@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Configuration>
+    <!-- Basic Game Settings -->
+    <World>
+        <MaxX>20</MaxX>
+        <MaxY>15</MaxY>
+    </World>
+
+    <GameLevel>Normal</GameLevel>
+    
+    <Logging>
+        <Level>Warning</Level>
+        <Output>Both</Output>
+    </Logging>
+    
+</Configuration>

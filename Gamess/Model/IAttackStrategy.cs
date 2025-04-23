@@ -1,5 +1,4 @@
-namespace Gamess;
-
+using Gamess;
 public interface IAttackStrategy
 {
     int CalculateAttack(List<AttackItem> items);
