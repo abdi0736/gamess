@@ -1,0 +1,42 @@
+Info: World Size: 25 x 15
+Info: 
+Abdi has equipped the following attack items:
+Info: - Sword (Damage: 10, Range: 1)
+Info: - Fireball (Damage: 20, Range: 3)
+Info: 
+== Battle 1: Abdi vs Orc ==
+Abdi HP: 100 | Orc HP: 50
+[OBSERVE] Orc was hit for 30 damage. Remaining HP: 20
+Info: 
+== After the attack ==
+Orc HP: 20
+Info: 
+Hero now using a composite weapon: Magic sword
+Info: Total damage: 30
+Info: 
+== Final Battle ==
+Abdi HP: 100 | Orc HP: 20
+Info: 
+Liam has equipped the following attack items:
+Info: - Axe (Damage: 15, Range: 1)
+Info: 
+== Battle 2: Liam vs Goblin ==
+Liam HP: 80 | Goblin HP: 40
+Info: 
+== After the attack ==
+Goblin HP: 25
+Info: 
+== Final Battle ==
+Liam HP: 80 | Goblin HP: 25
+Info: 
+Sarah has equipped the following attack items:
+Info: - Bow (Damage: 12, Range: 3)
+Info: 
+== Battle 3: Sarah vs Troll ==
+Sarah HP: 90 | Troll HP: 60
+Info: 
+== After the attack ==
+Troll HP: 48
+Info: 
+== Final Battle ==
+Sarah HP: 90 | Troll HP: 48
