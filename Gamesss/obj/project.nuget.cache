@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "xMl1cimZc48=",
+  "dgSpecHash": "zrUADSNX+Y4=",
   "success": true,
   "projectFilePath": "/Users/abdisirat/Desktop/gamessnew/Gamesss/Gamesss.csproj",
   "expectedPackageFiles": [
+    "/Users/abdisirat/.nuget/packages/enums.net/5.0.0/enums.net.5.0.0.nupkg.sha512",
     "/Users/abdisirat/.nuget/packages/microsoft.extensions.configuration/7.0.0/microsoft.extensions.configuration.7.0.0.nupkg.sha512",
     "/Users/abdisirat/.nuget/packages/microsoft.extensions.configuration.abstractions/7.0.0/microsoft.extensions.configuration.abstractions.7.0.0.nupkg.sha512",
     "/Users/abdisirat/.nuget/packages/microsoft.extensions.configuration.fileextensions/7.0.0/microsoft.extensions.configuration.fileextensions.7.0.0.nupkg.sha512",

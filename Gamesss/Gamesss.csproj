@@ -11,4 +11,8 @@
       <ProjectReference Include="..\Gamess\Gamess.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <PackageReference Include="Enums.NET" Version="5.0.0" />
+    </ItemGroup>
+
 </Project>

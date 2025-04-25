@@ -1,30 +1,30 @@
-using System.Xml;
+using System.Xml.Linq;
+using System;
+using Gamess.Model;
 
-namespace Gamess
+namespace Gamess.Config
 {
     public class GameConfig
     {
-        public int MaxX { get; private set; }
-        public int MaxY { get; private set; }
-        public string GameLevel { get; private set; }
-        public string LoggingLevel { get; private set; } = "Verbose";
-        public string LoggingOutput { get; private set; } = "Console";
+        public int MaxX { get; set; }
+        public int MaxY { get; set; }
+        public GameDifficulty Level { get; set; }
+        public string LogOutput { get; set; } = "Console";
+        public string LogLevel { get; set; } = "Info";
 
-        public void Load(string path)
+        public static GameConfig LoadFromFile(string path)
         {
-            XmlDocument doc = new XmlDocument();
-            doc.Load(path);
-    
-            MaxX = Convert.ToInt32(doc.DocumentElement.SelectSingleNode("World/MaxX")?.InnerText);
-            MaxY = Convert.ToInt32(doc.DocumentElement.SelectSingleNode("World/MaxY")?.InnerText);
-            GameLevel = doc.DocumentElement.SelectSingleNode("GameLevel")?.InnerText.Trim();
-
-            var loggingNode = doc.DocumentElement.SelectSingleNode("Logging");
-            if (loggingNode != null)
+            var xml = XDocument.Load(path);
+            var config = new GameConfig
             {
-                LoggingLevel = loggingNode.SelectSingleNode("Level")?.InnerText.Trim() ?? "Verbose";
-                LoggingOutput = loggingNode.SelectSingleNode("Output")?.InnerText.Trim() ?? "Console";
-            }
+                MaxX = int.Parse(xml.Root.Element("World")?.Element("MaxX")?.Value ?? "10"),
+                MaxY = int.Parse(xml.Root.Element("World")?.Element("MaxY")?.Value ?? "10"),
+                Level = Enum.TryParse(xml.Root.Element("GameLevel")?.Value, true, out GameDifficulty lvl) ? lvl : GameDifficulty.Normal,
+                LogOutput = xml.Root.Element("Logging")?.Element("Output")?.Value ?? "Console",
+                LogLevel = xml.Root.Element("Logging")?.Element("Level")?.Value ?? "Info"
+            };
+
+            return config;
         }
     }
 }

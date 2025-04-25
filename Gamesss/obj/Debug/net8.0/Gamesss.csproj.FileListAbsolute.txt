@@ -26,3 +26,4 @@
 /Users/abdisirat/Desktop/gamessnew/Gamesss/obj/Debug/net8.0/Gamesss.genruntimeconfig.cache
 /Users/abdisirat/Desktop/gamessnew/Gamesss/obj/Debug/net8.0/ref/Gamesss.dll
 /Users/abdisirat/Desktop/gamessnew/Gamesss/bin/Debug/net8.0/config.xml
+/Users/abdisirat/Desktop/gamessnew/Gamesss/bin/Debug/net8.0/Enums.NET.dll
