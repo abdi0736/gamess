@@ -1,0 +1,16 @@
+Info: Verden størrelse: 20 x 15
+Info: Sværhedsgrad: Normal
+Info: 
+Abdi har følgende våben:
+Info: - Sword (Damage: 10, Range: 1)
+Info: - Fireball (Damage: 20, Range: 3)
+Info: 
+== Før kampen ==
+Abdi HP: 100 | Orc HP: 50
+[OBSERVE] Orc was hit for 30 damage. Remaining HP: 20
+Info: 
+== Efter angreb ==
+Orc HP: 20
+Info: 
+Abdi bruger nu: Magic Sword
+Info: Total skade: 30

@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Diagnostics;
+using Gamess.Config;
 using Gamess.Creatures;
 using Gamess.Items;
 using Gamess.Strategies;
 using Gamess.Observers;
-using Gamess.World;
-using Gamess.Config;
+using Gamess.Model; // <- Dette er korrekt namespace hvor Config ligger
+
 
 namespace Gamess
 {
@@ -13,10 +14,7 @@ namespace Gamess
     {
         static void Main(string[] args)
         {
-            // Load configuration from XML
-            GameConfig config = GameConfig.LoadFromFile("config.xml");
-
-            // Initialize the logger
+            GameConfig config = GameConfig.LoadFromFile("config.xml");  
             GameLogger.Initialize(config.LogOutput, config.LogLevel);
 
             // Create World using config values
@@ -24,39 +22,50 @@ namespace Gamess
             Trace.WriteLine($"Verden størrelse: {world.MaxX} x {world.MaxY}", "Info");
             Trace.WriteLine($"Sværhedsgrad: {config.Level}", "Info");
 
+
             // === Hero setup ===
-            Creature hero = new Hero("Abdi", 100, new DefaultAttackStrategy());
+            var hero = new Hero("Abdi", 100, new DefaultAttackStrategy());
 
             var sword = new AttackItem("Sword", 10, 1);
             sword.SetBoostFunction((owner, baseHit) =>
-                owner.HitPoints < (owner.HitPoints * 0.25) ? baseHit + 5 : baseHit
+                owner.HitPoints < (owner.MaxHitPoints * 0.25) ? baseHit + 5 : baseHit
             );
-            hero.EquipAttackItem(sword);
 
-            var fireball = new AttackItem("Fireball", 20, 3);
+            var fireball = new AttackItem("Fireball", 20, 2);
+
+            hero.EquipAttackItem(sword);
             hero.EquipAttackItem(fireball);
 
-            Creature enemy = new Hero("Orc", 50, new DefaultAttackStrategy());
+            // === Enemy setup ===
+            var enemy = new Hero("Goblin", 80, new DefaultAttackStrategy());
+            enemy.EquipAttackItem(new AttackItem("Claws", 8, 1));
             enemy.AddObserver(new HitLogger());
 
-            // Display equipped items
-            Trace.WriteLine($"\n{hero.Name} har følgende våben:", "Info");
-            foreach (var item in hero.GetAttackItems())
+            Trace.WriteLine($"\n{hero.Name} vs. {enemy.Name} starter nu!");
+
+            // === Kamp loop ===
+            int round = 1;
+            while (hero.HitPoints > 0 && enemy.HitPoints > 0)
             {
-                Trace.WriteLine($"- {item.Name} (Damage: {item.Hit}, Range: {item.Range})", "Info");
+                Trace.WriteLine($"\n--- Runde {round} ---");
+
+                hero.PerformAttack(enemy);
+                if (enemy.HitPoints <= 0) break;
+
+                enemy.PerformAttack(hero);
+                round++;
             }
 
-            Trace.WriteLine($"\n== Før kampen ==\n{hero.Name} HP: {hero.HitPoints} | {enemy.Name} HP: {enemy.HitPoints}", "Info");
-            hero.PerformAttack(enemy);
-            Trace.WriteLine($"\n== Efter angreb ==\n{enemy.Name} HP: {enemy.HitPoints}", "Info");
+            // === Vinder ===
+            string winner = hero.HitPoints > 0 ? hero.Name : enemy.Name;
+            Trace.WriteLine($"\n== Kamp slut ==\nVinder: {winner}", "Info");
 
-            // Composite weapon
-            AttackItemComposite compositeWeapon = new AttackItemComposite("Magic Sword");
-            compositeWeapon.Add(sword);
-            compositeWeapon.Add(fireball);
+            // === Composite våben test ===
+            var composite = new AttackItemComposite("Magic Sword");
+            composite.Add(sword);
+            composite.Add(fireball);
 
-            Trace.WriteLine($"\n{hero.Name} bruger nu: {compositeWeapon.Name}", "Info");
-            Trace.WriteLine($"Total skade: {compositeWeapon.GetEffectiveHit(hero)}", "Info");
+            Trace.WriteLine($"\n{hero.Name} bruger nu {composite.Name} med skade: {composite.GetEffectiveHit(hero)}");
         }
     }
 }
